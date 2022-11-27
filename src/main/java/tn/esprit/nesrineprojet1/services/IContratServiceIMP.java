@@ -34,7 +34,7 @@ public class IContratServiceIMP implements IContratService{
     public Contrat getById(Integer idContrat){return contratRepository.findById(idContrat).orElse(null);}
 
     public List<Contrat> AllContrats(){
-        return null;
+        return contratRepository.findAll();
     }
 
     @Override
@@ -69,12 +69,13 @@ public class IContratServiceIMP implements IContratService{
     }
 
     public void archiveContrats() {
-        contratRepository.findContratByArchiveIsFalseAndDateFinContrat()
+        Date finContrat = null;
+        contratRepository.findContratByArchiveIsFalseAndDateFinContrat(finContrat ) ;
     }
 
-    @Scheduled(fixedRate = "60000")
+   // @Scheduled(fixedRate = "60000")
     @Override
-    public void retrieveAndUpdateStatusContrat()² {
+    public void retrieveAndUpdateStatusContrat() {
         List<Contrat> contrats = contratRepository.findContratByArchiveIsFalse();
         contrats.stream().filter(contrat -> HelperClass.computeDifferenceBetweenDateInDays(new Date(), contrat.getDateFinContrat())<16)
                 .forEach(contrat -> log.info("Contrat de l'etudiant" + contrat.getEtud1().getNomE())) ;
