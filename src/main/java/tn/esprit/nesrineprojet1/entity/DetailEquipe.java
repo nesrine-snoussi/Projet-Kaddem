@@ -2,9 +2,7 @@ package tn.esprit.nesrineprojet1.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -14,6 +12,7 @@ import javax.persistence.OneToOne;
 @NoArgsConstructor
 public class DetailEquipe {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idDetailEquipe;
     private int salle;
     private String thematique;

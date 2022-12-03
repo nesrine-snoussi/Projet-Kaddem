@@ -10,4 +10,6 @@ public interface IEquipeService {
     public void removeEquipe (Integer idEquipe);
     public List<Equipe> AllEquipes();
     public Equipe getById (Integer idEquipe);
+
+    public void faireevoluerEquipes();
 }

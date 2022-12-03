@@ -40,5 +40,10 @@ public class IEquipeServiceIMP implements IEquipeService{
         return equipeRepository.findById(idEquipe).orElse(null);
     }
 
+    @Override
+    public void faireevoluerEquipes() {
+
+    }
+
 
 }

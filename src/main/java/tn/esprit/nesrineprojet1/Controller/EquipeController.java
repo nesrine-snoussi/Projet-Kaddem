@@ -47,4 +47,7 @@ public class EquipeController {
     }
 
 
+    @PutMapping("/evoluerequipe")
+    public void EvoluerEquipe(){
+        equipeService.faireevoluerEquipes();}
 }

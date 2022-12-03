@@ -44,7 +44,7 @@ public class IEtudiantServiceIMP implements IEtudiantService{
 
     @Override
     public List<Etudiant> getAllEtudiant() {
-        return null;
+        return etudiantRepository.findAll();
     }
 
     @Override

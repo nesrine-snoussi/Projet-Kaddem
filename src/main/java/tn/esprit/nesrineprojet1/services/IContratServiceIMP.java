@@ -73,7 +73,7 @@ public class IContratServiceIMP implements IContratService{
         contratRepository.findContratByArchiveIsFalseAndDateFinContrat(finContrat ) ;
     }
 
-   // @Scheduled(fixedRate = "60000")
+   @Scheduled(fixedRate = 60000)
     @Override
     public void retrieveAndUpdateStatusContrat() {
         List<Contrat> contrats = contratRepository.findContratByArchiveIsFalse();
